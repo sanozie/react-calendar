@@ -2,8 +2,7 @@
   width: 350px;
   max-width: 100%;
   line-height: 1.125em;
-  color: white;
-
+  transition: 0.3s ease-in-out;
   &--doubleView {
     width: 700px;
 
@@ -26,12 +25,11 @@
 
   button {
     margin: 0;
-    border: 0;
     outline: none;
     background: none;
     border: none;
     transition: 0.2s ease-in-out;
-
+    color: white;
 
     &:enabled {
       &:hover {
@@ -46,18 +44,17 @@
 
     button {
       min-width: 44px;
-      background: none;
-      transition: 0.2s ease-in-out;
 
       &:enabled {
-        &:hover, &:focus {
-          color: #2b2b2b;
-          background-color: #dd00ff;
+        &:hover {
+          opacity: 0.93;
+          color: #ffe600;
         }
       }
 
       &[disabled] {
         background-color: rgb(240, 240, 240);
+        
       }
     }
   }
@@ -68,6 +65,7 @@
       text-transform: uppercase;
       font-weight: bold;
       font-size: .75em;
+      display: none !important;
 
       &__weekday {
         padding: .5em;
@@ -83,6 +81,7 @@
         justify-content: center;
         font-size: .75em;
         padding: calc(.75em / .75) calc(.5em / .75);
+        
       }
     }
 
@@ -109,51 +108,50 @@
     text-align: center;
     padding: .75em .5em;
     background: none;
+    border-radius: 50%;
 
     &:disabled {
       background-color: rgb(240, 240, 240);
     }
 
     &:enabled {
-      &:hover, &:focus {
-        color: #2b2b2b;
-        background-color: #dd00ff;
+      // not for status page
+      //&:hover, &:focus {
+      &:hover {
+        color: #dd00ff;
       }
     }
 
     &--now {
-      @bgcolor: lighten(#50e3c1, 30%);
-      background: @bgcolor;
-
+      
       &:enabled {
+        color: #50e3c1;
         &:hover, &:focus {
-          background: lighten(@bgcolor, 10%);
+          color: #dd00ff;
+          background: none;
         }
       }
     }
 
-    &--hasActive {
-      @bgcolor: lighten(#ffe600, 30%);
-      background: @bgcolor;
-
-      &:enabled {
-        &:hover, &:focus {
-          background: lighten(@bgcolor, 10%);
-        }
-      }
-    }
-
-    &--active {
-      @bgcolor: #50e3c1;
-      background: @bgcolor;
-      color: white;
-
-      &:enabled {
-        &:hover, &:focus {
-          background: lighten(@bgcolor, 10%);
-        }
-      }
-    }
+    // &--hasActive {
+    //   &:enabled {
+    //     @bgcolor: lighten(#ffe600, 30%);
+    //     color: @bgcolor;
+    //     &:hover, &:focus {
+    //       color: lighten(@bgcolor, 10%);
+    //     }
+    //   }
+    // }
+    //not needed for Status page calendar
+    // &--active {
+    //   &:enabled {
+    //     @bgcolor: #50e3c1;
+    //   background: @bgcolor;
+    //     &:hover, &:focus {
+    //       background: lighten(@bgcolor, 10%);
+    //     }
+    //   }
+    // }
   }
 
   &--selectRange {
