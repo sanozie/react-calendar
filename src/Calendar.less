@@ -1,10 +1,8 @@
 .react-calendar {
   width: 350px;
   max-width: 100%;
-  background: white;
-  border: 1px solid rgb(160, 160, 150);
-  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
+  color: white;
 
   &--doubleView {
     width: 700px;
@@ -30,6 +28,10 @@
     margin: 0;
     border: 0;
     outline: none;
+    background: none;
+    border: none;
+    transition: 0.2s ease-in-out;
+
 
     &:enabled {
       &:hover {
@@ -45,10 +47,12 @@
     button {
       min-width: 44px;
       background: none;
+      transition: 0.2s ease-in-out;
 
       &:enabled {
         &:hover, &:focus {
-          background-color: rgb(230, 230, 230);
+          color: #2b2b2b;
+          background-color: #dd00ff;
         }
       }
 
@@ -84,9 +88,6 @@
 
     &__days {
       &__day {
-        &--weekend {
-          color: rgb(209, 0, 0);
-        }
 
         &--neighboringMonth {
           color: rgb(117, 117, 117)
@@ -115,12 +116,13 @@
 
     &:enabled {
       &:hover, &:focus {
-        background-color: rgb(230, 230, 230);
+        color: #2b2b2b;
+        background-color: #dd00ff;
       }
     }
 
     &--now {
-      @bgcolor: lighten(rgb(220, 220, 0), 30%);
+      @bgcolor: lighten(#50e3c1, 30%);
       background: @bgcolor;
 
       &:enabled {
@@ -131,7 +133,7 @@
     }
 
     &--hasActive {
-      @bgcolor: lighten(rgb(0, 110, 220), 30%);
+      @bgcolor: lighten(#ffe600, 30%);
       background: @bgcolor;
 
       &:enabled {
@@ -142,7 +144,7 @@
     }
 
     &--active {
-      @bgcolor: rgb(0, 110, 220);
+      @bgcolor: #50e3c1;
       background: @bgcolor;
       color: white;
 
