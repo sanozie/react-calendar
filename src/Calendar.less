@@ -48,7 +48,7 @@
       &:enabled {
         &:hover {
           opacity: 0.93;
-          color: #ffe600;
+          color: #FFD100;
         }
       }
 
@@ -118,16 +118,16 @@
       // not for status page
       //&:hover, &:focus {
       &:hover {
-        color: #dd00ff;
+        color: #9D67E3;
       }
     }
 
     &--now {
       
       &:enabled {
-        color: #50e3c1;
+        color: #50E3C1;
         &:hover, &:focus {
-          color: #dd00ff;
+          color: #9D67E3;
           background: none;
         }
       }
@@ -135,23 +135,25 @@
 
     // &--hasActive {
     //   &:enabled {
-    //     @bgcolor: lighten(#ffe600, 30%);
+    //     @bgcolor: lighten(#FFD100, 30%);
     //     color: @bgcolor;
     //     &:hover, &:focus {
     //       color: lighten(@bgcolor, 10%);
     //     }
     //   }
     // }
-    //not needed for Status page calendar
-    // &--active {
-    //   &:enabled {
-    //     @bgcolor: #50e3c1;
-    //   background: @bgcolor;
-    //     &:hover, &:focus {
-    //       background: lighten(@bgcolor, 10%);
-    //     }
-    //   }
-    // }
+
+    // not needed for Status page calendar
+     &--active {
+       &:enabled {
+         @bgcolor: #50E3C1;
+         background: fade(@bgcolor, 70%);
+         &:hover, &:focus {
+           background: fade(@bgcolor, 90%);
+           color: #757575;
+         }
+       }
+     }
   }
 
   &--selectRange {
